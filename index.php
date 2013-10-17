@@ -48,6 +48,25 @@
 					<p>We have been voted best car company in the UK by our employees 8 years running. <br/>Boyd's Used Motors has been running for over 13 years selling reliable used cars to the first person to walk in the door.</p>
 					
 					<p>We saw you coming and made a special price just for you! That's the quality service you can expect from our friendly staff.</p>
+					
+					<h2>Current Weather in Mount Batten</h2>
+					<?php 
+						$json = file_get_contents("http://comp2203.ecs.soton.ac.uk/labs/lab3/api/location.php?location=3827");
+						$data = json_decode($json);
+						/*
+						echo "<pre>";
+						print_r($data);
+						echo "</pre>";
+						echo"($data->id)";
+						*/
+					?>
+					<p> Country: <?php echo($data->country)?></p>
+					<p>	Temperature: <?php echo($data->weather->temperature)?></p>
+					<p>	Weather Type: <?php echo($data->weather->weatherType)?></p>
+					<p>	Wind Speed: <?php echo ($data->weather->wind->speed)?></p>
+
+					
+					
 				</div>
 				
 				<!-- sidebar -->
